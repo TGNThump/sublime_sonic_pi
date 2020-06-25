@@ -2,6 +2,7 @@ import sublime, sublime_plugin, shlex
 from subprocess import Popen
 
 def sonic_pi(command):
+    command = command.replace('\n', ';')
     print(shlex.quote(command))
     Popen("sonic_pi " + shlex.quote(command),shell=True)
 
